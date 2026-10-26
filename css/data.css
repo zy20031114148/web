@@ -1,0 +1,164 @@
+/* data.css 搜索区、文章数量、留言列表的样式 */
+
+/* ---- 搜索区 ---- */
+.sousuo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sousuo input[type="text"] {
+    flex: 1;
+    min-width: 150px;
+    font-size: 14px;
+    background-color: #fbfcfb;
+}
+
+.sousuo select {
+    padding: 7px 10px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fbfcfb;
+    border: 1px solid #d8ddd8;
+    border-radius: 4px;
+}
+
+.sousuo input[type="text"]:focus,
+.sousuo select:focus {
+    outline: none;
+    border-color: #2e6e4e;
+    background-color: #fff;
+}
+
+/* ---- 文章数量 ---- */
+.wenzhangshu {
+    margin: 0 0 12px;
+    font-size: 13px;
+    color: #999;
+}
+
+/* ---- 空状态：没搜到文章、还没留言都用这个 ---- */
+.kongtishi {
+    display: block;
+    padding: 18px 16px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    background-color: #fbfcfb;
+    border: 1px dashed #d8ddd8;
+    border-radius: 6px;
+}
+
+/* ---- 留言列表 ---- */
+.liuyantitle {
+    margin: 22px 0 10px;
+    padding-top: 14px;
+    font-size: 15px;
+    color: #222;
+    border-top: 1px dashed #d8ddd8;
+}
+
+.liuyanliebiao {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.liuyantiao {
+    position: relative;
+    padding: 12px 14px;
+    background-color: #fbfcfb;
+    border: 1px solid #e4e8e4;
+    border-radius: 6px;
+}
+
+.liuyanmingzi {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1c5238;
+}
+
+.liuyanneirong {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #444;
+    word-break: break-word;
+}
+
+.liuyanshijian {
+    font-size: 12px;
+    color: #999;
+}
+
+/* 每条留言右上的删除按钮 */
+.shanchu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 10px;
+    font-size: 12px;
+    color: #a93226;
+    background-color: #fff;
+    border: 1px solid #f0c9c4;
+}
+
+.shanchu:hover {
+    color: #fff;
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+/* 昵称/内容为空的提示 */
+.liuyantishi {
+    min-height: 18px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.liuyantishi.cuo {
+    color: #c0392b;
+}
+
+/* ===== 夜间模式 ===== */
+body.night .sousuo input[type="text"],
+body.night .sousuo select {
+    color: #c9ced1;
+    background-color: #23272a;
+    border-color: #3a4145;
+}
+
+body.night .wenzhangshu,
+body.night .kongtishi {
+    color: #9aa2a6;
+}
+
+body.night .kongtishi {
+    background-color: #23272a;
+    border-color: #3a4145;
+}
+
+body.night .liuyantitle {
+    color: #e8ecee;
+    border-top-color: #3a4145;
+}
+
+body.night .liuyantiao {
+    background-color: #23272a;
+    border-color: #3a4145;
+}
+
+body.night .liuyanmingzi {
+    color: #8fc4a5;
+}
+
+body.night .liuyanneirong {
+    color: #c9ced1;
+}
+
+body.night .shanchu {
+    color: #e08c84;
+    background-color: #2b3033;
+    border-color: #5c3a36;
+}

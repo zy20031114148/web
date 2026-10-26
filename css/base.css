@@ -1,0 +1,115 @@
+/* base.css 基础样式
+   reset之后的全站默认风格：字体、颜色、链接、表单这些 */
+
+/* ---- 页面基础 ---- */
+body {
+    background-color: #f4f6f4;        /* 淡灰绿背景 */
+    color: #333;
+    font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+/* ---- 文字排版 ---- */
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+h1 { font-size: 2em;     margin: 0.67em 0; }
+h2 { font-size: 1.5em;   margin: 0.83em 0; }
+h3 { font-size: 1.17em;  margin: 1em 0; }
+h4 { font-size: 1em;     margin: 1.33em 0; }
+h5 { font-size: 0.83em;  margin: 1.67em 0; }
+h6 { font-size: 0.67em;  margin: 2.33em 0; }
+
+/* 段落间距用rem（跟着html根字号16px走，1rem=16px）
+   上面的标题用的是em（跟着当前元素字号走），两种都试了试 */
+p {
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    margin-bottom: 1em;
+}
+
+/* ---- 链接交互 ---- */
+a {
+    color: #2e6e4e;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+a:hover {
+    color: #1c5238;
+    text-decoration: underline;
+}
+
+/* ---- 行内代码 ---- */
+code {
+    background-color: #e8f0ea;
+    color: #2e6e4e;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: #2e2e2e;
+    color: #f0f0f0;
+    padding: 14px 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 1em 0;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+}
+
+/* ---- 表单基础 ---- */
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="url"],
+textarea {
+    border: 1px solid #d8ddd8;
+    border-radius: 4px;
+    padding: 7px 10px;
+    background-color: #fff;
+    transition: border-color 0.15s, background-color 0.15s;
+}
+
+button {
+    border: 1px solid #2e6e4e;
+    border-radius: 4px;
+    padding: 7px 16px;
+    background-color: #2e6e4e;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+button:hover {
+    background-color: #1c5238;
+}
+
+/* ---- 键盘焦点提示 ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 3px solid #bd8839;
+    outline-offset: 2px;
+}

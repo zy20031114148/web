@@ -1,0 +1,134 @@
+/* article.css 文章详情页专用
+   页头页脚侧栏都在common里，这里只管文章本身的排版 */
+
+/* 文章头：标题和meta信息 */
+.article-header {
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+}
+
+.article-header h1 {
+    font-size: 28px;
+    color: #1c5238;
+    margin: 0 0 12px;
+    line-height: 1.4;
+}
+
+/* p自带的margin-bottom在这用不上，清掉 */
+.article-meta {
+    color: #999;
+    font-size: 13px;
+    margin: 0;
+}
+
+.article-meta span {
+    margin-right: 16px;
+}
+
+.article-meta a {
+    color: #2e6e4e;
+}
+
+/* 正文排版 */
+.article-content {
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    padding: 28px 32px;
+    line-height: 1.9;
+    font-size: 16px;
+    color: #444;
+}
+
+.article-content h2 {
+    font-size: 22px;
+    color: #1c5238;
+    margin: 1.4em 0 0.6em;
+    padding-left: 12px;
+    border-left: 4px solid #2e6e4e;
+}
+
+.article-content h3 {
+    font-size: 18px;
+    color: #2e6e4e;
+    margin: 1.2em 0 0.5em;
+}
+
+.article-content p {
+    margin: 0 0 1em;
+}
+
+.article-content ul,
+.article-content ol {
+    padding-left: 2em;
+    margin: 0 0 1em;
+    list-style: disc;
+}
+
+.article-content ol {
+    list-style: decimal;
+}
+
+.article-content li {
+    margin-bottom: 4px;
+}
+
+.article-content blockquote {
+    border-left: 3px solid #d8ddd8;
+    background-color: #f8faf8;
+    padding: 10px 16px;
+    margin: 1em 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.article-content img {
+    margin: 1em auto;
+    border-radius: 6px;
+}
+
+/* 正文里的表格，reset里清空边框后这里要补回来 */
+.article-content th,
+.article-content td {
+    border: 1px solid #e4e8e4;
+    padding: 6px 10px;
+    font-size: 14px;
+}
+
+.article-content th {
+    background-color: #f0f5f1;
+    color: #1c5238;
+    font-weight: bold;
+}
+
+/* 底部返回和标签 */
+.article-footer {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.back-link {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tag-list-inline {
+    font-size: 13px;
+    color: #999;
+}
+
+.tag-list-inline a {
+    color: #2e6e4e;
+    margin: 0 4px;
+}

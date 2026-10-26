@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="个人博客 - 记录学习，也记录生活">
+    <meta name="keywords" content="博客,学习笔记,HTML,CSS,前端">
+    <meta name="author" content="chen">
+
+    <title>个人博客 - 学习日常记录</title>
+
+    <!-- 引入顺序不能乱，后面的会覆盖前面的 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/data.css">
+    <link rel="stylesheet" href="css/media-query.css">
+
+    <!-- js写在head里：这时候下面的元素还没解析出来 -->
+    <script>
+        // 直接取是null，因为下面的内容还没加载出来
+        console.log('head里直接取换肤按钮：', document.getElementById('huanfubtn'));
+
+        // 包在window.onload里，等整个页面加载完再执行就能取到了
+        window.onload = function () {
+            console.log('onload里再取：', document.getElementById('huanfubtn'));
+            console.log('页面全部加载完了，这句话是head里的js打印的');
+        };
+    </script>
+</head>
+<body>
+
+    <!-- 顶部 -->
+    <header class="topbar">
+        <div class="neikuang">
+            <h1 class="zhanming"><a href="index.html">个人博客</a></h1>
+
+            <nav class="daohang">
+                <ul>
+                    <li><a href="index.html" class="dangqian">首页</a></li>
+                    <li><a href="archive.html">文章</a></li>
+                    <li><a href="#guanyu">关于我</a></li>
+                    <li><a href="#liuyanban">留言板</a></li>
+                </ul>
+            </nav>
+
+            <!-- 手机上的折叠菜单，宽屏看不到 -->
+            <details class="mobile-menu">
+                <summary>菜单</summary>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archive.html">文章</a></li>
+                        <li><a href="#guanyu">关于我</a></li>
+                        <li><a href="#liuyanban">留言板</a></li>
+                    </ul>
+                </nav>
+            </details>
+
+            <!-- 换肤：鼠标移进来弹出下面的主题菜单 -->
+            <div class="huanfu" id="huanfu">
+                <button type="button" class="huanfubtn" id="huanfubtn">更换皮肤</button>
+                <ul class="zhutiliebiao" id="zhutilist">
+                    <li><button type="button" data-zhuti="theme-red">红色系</button></li>
+                    <li><button type="button" data-zhuti="theme-blue">蓝色系</button></li>
+                    <li><button type="button" data-zhuti="theme-light">还原主题</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 横幅 -->
+    <section class="hengfu">
+        <div class="neikuang">
+            <p class="xiaobiaoti">LEARNING JOURNAL</p>
+            <h2 class="dabiaoti">重修Web，记录学习，也记录生活。</h2>
+        </div>
+    </section>
+
+    <main class="zhuti neikuang">
+
+        <div class="zuo">
+
+            <section class="wenliebiao">
+                <h2 class="kuaibiao">最近的文章</h2>
+
+                <!-- 搜索区：按标题搜，也可以按分类筛 -->
+                <div class="sousuo">
+                    <input type="text" id="sousuokey" placeholder="输入标题关键词">
+                    <select id="fenlei">
+                        <option value="">全部分类</option>
+                        <option value="学习">学习</option>
+                        <option value="日常">日常</option>
+                        <option value="随想">随想</option>
+                    </select>
+                    <button type="button" class="zhuyaobtn" id="sousuobtn">搜索</button>
+                    <button type="button" class="cibtn" id="chongzhibtn">重置</button>
+                </div>
+
+                <!-- 文章数量 -->
+                <p class="wenzhangshu" id="wenzhangshu">共 0 篇文章</p>
+
+                <!-- 文章标签都删了，只留这个容器让 js 往里填 -->
+                <div id="wenzhangliebiao"></div>
+            </section>
+
+            <!-- 留言板 -->
+            <section class="liuyanban" id="liuyanban">
+                <h2 class="kuaibiao">留言板</h2>
+                <p class="liuyanshuoming">有问题或者建议都可以留言，看到会回复。</p>
+                <form action="#" method="post" id="liuyanform">
+                    <div class="hang">
+                        <label for="xm">昵称</label>
+                        <input type="text" id="xm" name="nicheng" placeholder="怎么称呼你？">
+                    </div>
+                    <div class="hang">
+                        <label for="yx">邮箱</label>
+                        <input type="email" id="yx" name="youxiang" placeholder="用于收到回复（选填）">
+                    </div>
+                    <div class="hang">
+                        <span class="biaoqianwenzi">谁可以看到</span>
+                        <label class="danxuan">
+                            <input type="radio" name="kejian" value="admin" checked> 仅站长可见
+                        </label>
+                        <label class="danxuan">
+                            <input type="radio" name="kejian" value="all"> 所有人可见
+                        </label>
+                    </div>
+                    <div class="hang">
+                        <label for="nr">想留言的话</label>
+                        <textarea id="nr" name="neirong" rows="5" placeholder="说点什么吧……"></textarea>
+                    </div>
+                    <div class="anniu">
+                        <button type="submit" class="zhuyaobtn">提交留言</button>
+                        <button type="reset" class="cibtn">清空</button>
+                    </div>
+
+                    <!-- 昵称或内容为空时提示在这里 -->
+                    <p class="liuyantishi" id="liuyantishi"></p>
+                </form>
+
+                <!-- 留言条数和留言列表 -->
+                <h3 class="liuyantitle">全部留言（<span id="liuyanshu">0</span> 条）</h3>
+                <ul class="liuyanliebiao" id="liuyanlist"></ul>
+            </section>
+        </div>
+
+        <!-- 侧边栏 -->
+        <aside class="you" id="guanyu">
+
+            <section class="mokuai">
+                <h3>练习页面</h3>
+                <ul class="biji">
+                    <li><a href="basic.html">JS基础语法练习</a></li>
+                    <li><a href="score.html">成绩统计</a></li>
+                    <li><a href="register.html">注册表单校验</a></li>
+                </ul>
+            </section>
+
+            <section class="mokuai">
+                <h3>关于我</h3>
+                <figure class="touxiang">
+                    <img src="https://picsum.photos/seed/avatar7/96/96" alt="我的头像">
+                </figure>
+                <p class="wo">大四重修 · 计算机应用专业</p>
+                <p>Web基础重修中，重新过一遍标签和样式，顺便记点东西。争取这次把它学扎实。</p>
+            </section>
+
+            <section class="mokuai">
+                <h3>博客统计</h3>
+                <table class="tongji">
+                    <tr><td>文章总数</td><td>7 篇</td></tr>
+                    <tr><td>分类</td><td>学习 / 日常 / 随想</td></tr>
+                    <tr><td>建站时间</td><td>2026-09-01</td></tr>
+                    <tr><td>最近更新</td><td>2026-10-06</td></tr>
+                </table>
+            </section>
+
+            <section class="mokuai">
+                <h3>学习记录</h3>
+                <p>博客的三个练习阶段：</p>
+                <table class="jieduan">
+                    <tr>
+                        <th>阶段</th>
+                        <th>内容</th>
+                    </tr>
+                    <tr>
+                        <td>第一步</td>
+                        <td>HTML 结构</td>
+                    </tr>
+                    <tr>
+                        <td>第二步</td>
+                        <td>基础 CSS</td>
+                    </tr>
+                    <tr>
+                        <td>第三步</td>
+                        <td>Flex 布局</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="mokuai">
+                <h3>学习笔记</h3>
+                <ul class="biji">
+                    <li><a href="article.html">HTML 常用标签整理</a></li>
+                    <li><a href="#">CSS 选择器笔记</a></li>
+                    <li><a href="#">盒模型小结</a></li>
+                    <li><a href="#">Flex 布局小结</a></li>
+                    <li><a href="#">重修复习提纲</a></li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="dibu">
+        <p>&copy; 2026 个人博客 · 大四Web重修记录</p>
+    </footer>
+
+    <!-- js写在body最后：元素都加载完了，直接取就行 -->
+    <script>
+        console.log('body末尾直接取：', document.getElementById('huanfubtn'));
+        console.log('这句话是body末尾的js打印的，不用写window.onload');
+    </script>
+
+    <!-- 单独的js文件，同样放body末尾，数据在前，页面逻辑在后 -->
+    <script src="js/data.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

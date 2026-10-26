@@ -1,0 +1,317 @@
+/* theme.css 换肤
+   body加不同的class就能换一整套配色，JS那边只管切类名 */
+
+/* ===== 夜间模式：body有night类就变深色 ===== */
+body.night {
+    background-color: #1e2224;
+    color: #c9ced1;
+}
+
+body.night .topbar,
+body.night .dibu {
+    background-color: #262b2e;
+    border-color: #3a4145;
+}
+
+/* 几个白色卡片，晚上要跟着变深 */
+body.night .wenzhang,
+body.night .mokuai,
+body.night .liuyanban,
+body.night .article-header,
+body.night .article-content,
+body.night .article-footer,
+body.night .zhuce,
+body.night .chengjiqu {
+    background-color: #262b2e;
+    border-color: #3a4145;
+}
+
+/* 标题和正文颜色 */
+body.night h1,
+body.night h2,
+body.night h3 {
+    color: #e8ecee;
+}
+
+body.night h2,
+body.night h3 {
+    border-color: #3a4145;
+}
+
+body.night .wenzhang p,
+body.night .mokuai p,
+body.night .wenzhangxinxi,
+body.night .liuyanshuoming {
+    color: #9aa2a6;
+}
+
+/* 晚上把绿色的字调亮一点，不然看不清 */
+body.night a {
+    color: #6fae8b;
+}
+
+body.night .mokuai h3,
+body.night .dabiaoti {
+    color: #8fc4a5;
+}
+
+body.night .biaoqian {
+    background-color: #33403a;
+    color: #8fc4a5;
+}
+
+/* 表格 */
+body.night .tongji td,
+body.night .jieduan th,
+body.night .jieduan td {
+    border-color: #3a4145;
+}
+
+body.night .jieduan th {
+    background-color: #2f373a;
+    color: #c9ced1;
+}
+
+/* 导航栏链接 */
+body.night .daohang a {
+    color: #9aa2a6;
+}
+
+body.night .daohang a:hover {
+    background-color: #33403a;
+    color: #8fc4a5;
+}
+
+/* 输入框 */
+body.night .formhang input,
+body.night .formhang select {
+    background-color: #1e2224;
+    border-color: #3a4145;
+    color: #c9ced1;
+}
+
+/* 文章里的工具区 */
+body.night .gongju {
+    background-color: #2f373a;
+    border-color: #3a4145;
+}
+
+/* 面包屑 */
+body.night .mianbaoxie {
+    color: #9aa2a6;
+}
+
+body.night .mianbaoxie a {
+    color: #6fae8b;
+}
+
+/* 注册页的站名 */
+body.night .zhuce-brand {
+    color: #8fc4a5;
+}
+
+/* 及格名单和统计数字 */
+body.night .mingdan li.jige,
+body.night .jieguo strong {
+    color: #8fc4a5;
+}
+
+/* 夜间的换肤按钮，绿色调亮一点，不然糊在背景里 */
+body.night .huanfubtn,
+body.night .zhutiliebiao button {
+    background-color: #3d6b55;
+    border-color: #3d6b55;
+    color: #fff;
+}
+
+body.night .huanfubtn:hover,
+body.night .zhutiliebiao button:hover {
+    background-color: #4e8f6d;
+}
+
+/* ===== 红色系 ===== */
+body.theme-red {
+    background-color: #fbf0ed;
+    color: #4a3b38;
+}
+
+body.theme-red .topbar,
+body.theme-red .dibu {
+    background-color: #fff9f7;
+    border-color: #eccfc9;
+}
+
+body.theme-red .wenzhang,
+body.theme-red .mokuai,
+body.theme-red .liuyanban,
+body.theme-red .article-header,
+body.theme-red .article-content,
+body.theme-red .article-footer,
+body.theme-red .zhuce,
+body.theme-red .chengjiqu {
+    background-color: #fffdfc;
+    border-color: #eccfc9;
+}
+
+body.theme-red h1,
+body.theme-red h2,
+body.theme-red h3 {
+    color: #7d2b22;
+}
+
+body.theme-red a {
+    color: #b03a2e;
+}
+
+body.theme-red .daohang a.dangqian {
+    background-color: #b03a2e;
+}
+
+body.theme-red .jieduan th {
+    background-color: #fbe9e6;
+}
+
+/* 红色系的按钮也换成红的 */
+body.theme-red .huanfubtn,
+body.theme-red .zhutiliebiao button {
+    background-color: #b03a2e;
+    border-color: #b03a2e;
+}
+
+body.theme-red .huanfubtn:hover,
+body.theme-red .zhutiliebiao button:hover {
+    background-color: #8f2f26;
+}
+
+body.theme-red .biaoqian {
+    background-color: #fbe4e0;
+    color: #b03a2e;
+}
+
+body.theme-red .gongju {
+    background-color: #fdf6f4;
+    border-color: #eccfc9;
+}
+
+/* ===== 蓝色系 ===== */
+body.theme-blue {
+    background-color: #eaf1f8;
+    color: #3b4a5a;
+}
+
+body.theme-blue .topbar,
+body.theme-blue .dibu {
+    background-color: #f7fafd;
+    border-color: #d3e0ec;
+}
+
+body.theme-blue .wenzhang,
+body.theme-blue .mokuai,
+body.theme-blue .liuyanban,
+body.theme-blue .article-header,
+body.theme-blue .article-content,
+body.theme-blue .article-footer,
+body.theme-blue .zhuce,
+body.theme-blue .chengjiqu {
+    background-color: #fbfdff;
+    border-color: #d3e0ec;
+}
+
+body.theme-blue h1,
+body.theme-blue h2,
+body.theme-blue h3 {
+    color: #1f3f5f;
+}
+
+body.theme-blue a {
+    color: #2c5d8f;
+}
+
+body.theme-blue .daohang a.dangqian {
+    background-color: #2c5d8f;
+}
+
+body.theme-blue .jieduan th {
+    background-color: #e8f0f8;
+}
+
+/* 蓝色系的按钮也换成蓝的，不然绿蓝撞在一起 */
+body.theme-blue .huanfubtn,
+body.theme-blue .zhutiliebiao button {
+    background-color: #2c5d8f;
+    border-color: #2c5d8f;
+}
+
+body.theme-blue .huanfubtn:hover,
+body.theme-blue .zhutiliebiao button:hover {
+    background-color: #1f4468;
+}
+
+body.theme-blue .biaoqian {
+    background-color: #e3edf7;
+    color: #2c5d8f;
+}
+
+body.theme-blue .gongju {
+    background-color: #f4f8fc;
+    border-color: #d3e0ec;
+}
+
+/* 默认的白天模式，写了方便JS那边判断 */
+body.theme-light {
+    background-color: #f4f6f4;
+}
+
+/* ===== 换肤按钮组 =====
+   平时就一个按钮，鼠标移上去前面冒出三个主题按钮 */
+.huanfu {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.huanfubtn {
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2e6e4e;
+    border: 1px solid #2e6e4e;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.huanfubtn:hover {
+    background-color: #1c5238;
+}
+
+/* 三个主题按钮默认藏起来，JS移入时加xianshi才显示 */
+.zhutiliebiao {
+    display: none;
+    order: -1;                  /* 排在"更换皮肤"左边 */
+    gap: 6px;
+}
+
+.zhutiliebiao li {
+    list-style: none;
+}
+
+.zhutiliebiao button {
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2e6e4e;
+    border: 1px solid #2e6e4e;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.zhutiliebiao button:hover {
+    background-color: #1c5238;
+}
+
+/* 鼠标移入换肤区域后显示 */
+.zhutiliebiao.xianshi {
+    display: flex;
+}

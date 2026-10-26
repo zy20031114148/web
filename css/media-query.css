@@ -1,0 +1,62 @@
+/* 响应式：屏幕小于768px（平板竖屏/手机）时改单栏 + 折叠菜单
+   这个文件要放在最后引入，不然会被同优先级的样式盖回去 */
+
+@media (max-width: 768px) {
+
+    /* 横向导航收起来，换成折叠菜单 */
+    .daohang {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    /* 站名和菜单改成上下排 */
+    .topbar .neikuang {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .zhanming {
+        text-align: center;
+    }
+
+    /* 两栏改单栏，侧边栏掉到下面去 */
+    .zhuti {
+        flex-direction: column;
+        padding-top: 16px;
+    }
+
+    .you {
+        flex-basis: auto;
+    }
+
+    /* 字号压一压 */
+    .dabiaoti {
+        font-size: 24px;
+    }
+
+    .article-header,
+    .article-content {
+        padding: 20px;
+    }
+
+    .article-header h1 {
+        font-size: 22px;
+    }
+
+    /* 注册/统计页的卡片也缩一下 */
+    .zhuce,
+    .chengjiqu {
+        padding: 16px;
+    }
+
+    /* 换肤按钮在窄屏单独占一行，放不下就换行 */
+    .huanfu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

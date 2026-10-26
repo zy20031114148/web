@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS基础语法练习 - 个人博客">
+    <meta name="keywords" content="JavaScript,ES6,基础语法,控制台">
+    <meta name="author" content="chen">
+
+    <title>JS基础语法练习 - 个人博客</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/media-query.css">
+</head>
+<body>
+
+    <!-- 顶部 -->
+    <header class="topbar">
+        <div class="neikuang">
+            <h1 class="zhanming"><a href="index.html">个人博客</a></h1>
+
+            <nav class="daohang">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="archive.html" class="dangqian">文章</a></li>
+                    <li><a href="index.html#guanyu">关于我</a></li>
+                    <li><a href="index.html#liuyanban">留言板</a></li>
+                </ul>
+            </nav>
+
+            <details class="mobile-menu">
+                <summary>菜单</summary>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archive.html">文章</a></li>
+                        <li><a href="index.html#guanyu">关于我</a></li>
+                        <li><a href="index.html#liuyanban">留言板</a></li>
+                    </ul>
+                </nav>
+            </details>
+
+            <div class="huanfu" id="huanfu">
+                <button type="button" class="huanfubtn" id="huanfubtn">更换皮肤</button>
+                <ul class="zhutiliebiao" id="zhutilist">
+                    <li><button type="button" data-zhuti="theme-red">红色系</button></li>
+                    <li><button type="button" data-zhuti="theme-blue">蓝色系</button></li>
+                    <li><button type="button" data-zhuti="theme-light">还原主题</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 面包屑 -->
+    <nav class="mianbaoxie neikuang">
+        <a href="index.html">博客首页</a>
+        <span class="fenge">/</span>
+        <a href="archive.html">全部文章</a>
+        <span class="fenge">/</span>
+        <span>JS基础语法练习</span>
+    </nav>
+
+    <main class="zhuti neikuang">
+
+        <div class="zuo">
+
+            <!-- 文章头 -->
+            <header class="article-header">
+                <h1>JS基础语法练习</h1>
+                <p class="article-meta">
+                    <span>分类：<a href="archive.html">学习</a></span>
+                    <span>发布：<time>2026-10-12</time></span>
+                    <span>阅读时长：8 分钟</span>
+                </p>
+            </header>
+
+            <!-- 文章正文 -->
+            <article class="article-content">
+
+                <p>这周把 JavaScript 的基础语法过了一遍，顺便把 ES6 里常用的几个写法也试了试。代码都写在一个 js 文件里，打开这个页面按 <code>F12</code> → <code>Console</code> 就能看到下面这些例子的输出。</p>
+
+                <h2>一、常量和变量</h2>
+                <p><code>const</code> 定义常量，定义完不能再改；<code>let</code> 定义变量，后面可以重新赋值。</p>
+                <pre><code>const PI = 3.14159;
+let age = 18;
+age = 22;          // 变量可以改
+
+console.log('PI:', PI, 'age:', age);</code></pre>
+
+                <h2>二、数据类型</h2>
+                <p>基本类型有字符串、数字、布尔，引用类型常用的是对象和数组。对象用键值对存数据，还能带方法：</p>
+                <pre><code>const wenzhang = {
+    biaoti: '用HTML搭建文章结构',
+    zishu: 1200,
+    zhengwen: function () {
+        return '这是一篇讲HTML标签的文章';
+    }
+};
+
+console.log(wenzhang.zhengwen());</code></pre>
+
+                <h2>三、条件与循环</h2>
+                <p>用 <code>if</code> 判断分数及不及格，循环把普通的 <code>for</code>、<code>for...of</code> 和 <code>forEach</code> 三种写法都试了一遍：</p>
+                <pre><code>let fenshu = [72, 45, 88, 91, 60];
+
+for (let i = 0; i &lt; fenshu.length; i++) {
+    console.log(fenshu[i]);
+}
+
+for (let item of fenshu) {
+    console.log(item);
+}</code></pre>
+
+                <h2>四、函数</h2>
+                <p>普通函数、匿名函数、箭头函数都写了。箭头函数只有一个表达式时，可以省掉花括号和 <code>return</code>：</p>
+                <pre><code>function add(a, b) {
+    return a + b;
+}
+
+const plus = (a, b) => a + b;   // 隐式返回
+
+console.log(plus(10, 20));      // 30</code></pre>
+
+                <h2>五、模板字符串</h2>
+                <p>用反引号包起来，变量放进 <code>${}</code> 里，还能直接换行写多行字符串。</p>
+                <pre><code>const product = '笔记本';
+const price = 2999;
+
+console.log(`商品：${product}，价格：${price}元`);</code></pre>
+
+                <h2>六、ES6+ 的常用写法</h2>
+                <p>字符串的 <code>includes()</code> / <code>startsWith()</code> / <code>endsWith()</code>，数组和对象的解构赋值，对象字面量简写，还有扩展运算符 <code>...</code>：</p>
+                <pre><code>const [arr1, ...rest] = [1, 2, 3, 4];
+const { name } = boy;
+
+const blog = {
+    ming,
+    shu,
+    sayHi() {
+        return '欢迎来看我的博客';
+    }
+};</code></pre>
+
+                <blockquote>
+                    小结：语法点看着零碎，但写几遍就顺了。后面做表单校验的时候，正则和事件才是真正花时间的地方。
+                </blockquote>
+
+            </article>
+
+            <!-- 文章底部 -->
+            <div class="article-footer">
+                <a href="archive.html" class="back-link">&larr; 返回文章列表</a>
+                <span class="tag-list-inline">
+                    标签：
+                    <a href="archive.html">JavaScript</a>
+                    <a href="archive.html">ES6</a>
+                    <a href="archive.html">学习笔记</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- 侧边栏 -->
+        <aside class="you">
+            <section class="mokuai">
+                <h3>练习页面</h3>
+                <ul class="biji">
+                    <li><a href="basic.html">JS基础语法练习（本篇）</a></li>
+                    <li><a href="score.html">成绩统计</a></li>
+                    <li><a href="register.html">注册表单校验</a></li>
+                </ul>
+            </section>
+
+            <section class="mokuai">
+                <h3>关于我</h3>
+                <figure class="touxiang">
+                    <img src="https://picsum.photos/seed/avatar7/96/96" alt="我的头像">
+                </figure>
+                <p class="wo">大四重修 · 计算机应用专业</p>
+                <p>Web基础重修中，重新过一遍标签和样式，顺便记点东西。争取这次把它学扎实。</p>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="dibu">
+        <p>&copy; 2026 个人博客 · 大四Web重修记录</p>
+    </footer>
+
+    <script src="js/basic.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

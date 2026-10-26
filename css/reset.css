@@ -1,0 +1,46 @@
+/* reset.css 样式重置
+   把浏览器给的默认样式先清一遍，后面自己写的才不会互相打架
+   参考了 normalize.css 的思路，但只留用得到的部分 */
+
+/* 1. 统一盒模型：让 width/height 包含 padding 和 border，
+      避免每次手算 padding + border */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. 清除常用块级元素的默认外边距
+      （注意：不要用 * 通配符清空，否则会把段落、标题该有的间距都干掉） */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, figure, blockquote {
+    margin: 0;
+}
+
+/* 3. 去掉列表的默认缩进和列表标记 */
+ul, ol {
+    padding: 0;
+    list-style: none;
+}
+
+/* 4. 表单控件继承正文字体、字号、行高，不移除原生交互外观 */
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+/* 5. 图片不超出容器；等比缩放；块级显示消除行内基线下方空隙 */
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 6. 统一表格边框模型 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}

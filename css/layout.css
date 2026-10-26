@@ -1,0 +1,37 @@
+/* layout.css 布局
+   管页面的骨架：版心、两栏、页脚贴底 */
+
+/* body先变成纵向flex，main撑开剩下的高度，页脚就能一直贴底 */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- 版心容器 ---- */
+.neikuang {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---- 主体：左右两栏 ---- */
+.zhuti {
+    display: flex;          /* flex 横向布局 */
+    gap: 24px;
+    padding-top: 26px;
+    padding-bottom: 40px;
+    flex: 1;                /* 撑开剩余空间，让页脚贴底 */
+}
+
+/* 左侧主区：占据剩余宽度 */
+.zuo {
+    flex: 1;
+    min-width: 0;           /* 防止子项内容把 flex 容器撑爆 */
+}
+
+/* 右侧边栏：固定宽度，不被压缩 */
+.you {
+    flex-basis: 260px;
+    flex-shrink: 0;
+}

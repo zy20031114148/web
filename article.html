@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="用HTML搭建文章结构 - 个人博客">
+    <meta name="keywords" content="HTML,标签,语义化,博客">
+    <meta name="author" content="chen">
+
+    <title>用HTML搭建文章结构 - 个人博客</title>
+
+    <!-- 同一个引用顺序，只是把 main.css 换成了 article.css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/media-query.css">
+</head>
+<body>
+
+    <!-- 顶部，和主页一样的结构 -->
+    <header class="topbar">
+        <div class="neikuang">
+            <h1 class="zhanming"><a href="index.html">个人博客</a></h1>
+
+            <nav class="daohang">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="archive.html" class="dangqian">文章</a></li>
+                    <li><a href="index.html#guanyu">关于我</a></li>
+                    <li><a href="index.html#liuyanban">留言板</a></li>
+                </ul>
+            </nav>
+
+            <details class="mobile-menu">
+                <summary>菜单</summary>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archive.html">文章</a></li>
+                        <li><a href="index.html#guanyu">关于我</a></li>
+                        <li><a href="index.html#liuyanban">留言板</a></li>
+                    </ul>
+                </nav>
+            </details>
+
+            <div class="huanfu" id="huanfu">
+                <button type="button" class="huanfubtn" id="huanfubtn">更换皮肤</button>
+                <ul class="zhutiliebiao" id="zhutilist">
+                    <li><button type="button" data-zhuti="theme-red">红色系</button></li>
+                    <li><button type="button" data-zhuti="theme-blue">蓝色系</button></li>
+                    <li><button type="button" data-zhuti="theme-light">还原主题</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 面包屑：从首页点进来的路径 -->
+    <nav class="mianbaoxie neikuang">
+        <a href="index.html">博客首页</a>
+        <span class="fenge">/</span>
+        <a href="archive.html">全部文章</a>
+        <span class="fenge">/</span>
+        <span>用HTML搭建文章结构</span>
+    </nav>
+
+    <!-- 主体 -->
+    <main class="zhuti neikuang">
+
+        <div class="zuo">
+            <!-- 文章头 -->
+            <header class="article-header">
+                <h1>用HTML搭建文章结构</h1>
+                <p class="article-meta">
+                    <span>分类：<a href="#">学习</a></span>
+                    <span>发布：<time>2026-09-07</time></span>
+                    <span>阅读时长：6 分钟</span>
+                </p>
+            </header>
+
+            <!-- 文章正文 -->
+            <article class="article-content">
+
+                <p>这周把 <strong>常用 HTML 标签</strong> 集中过了一遍，把它们分成三类：<em>head 内的标签</em>、<em>body 内的标签</em> 和 <em>结构化语义标签</em>。记下来方便以后翻。</p>
+
+                <h2>一、head 内的标签</h2>
+                <p><code>&lt;head&gt;</code> 标签里通常放的是不会直接显示在页面里的内容，但浏览器会用到：</p>
+                <ul>
+                    <li><code>&lt;meta charset&gt;</code>：声明字符编码，避免中文乱码。</li>
+                    <li><code>&lt;meta viewport&gt;</code>：移动端响应式必备。</li>
+                    <li><code>&lt;meta name="description"&gt;</code>：SEO 描述。</li>
+                    <li><code>&lt;title&gt;</code>：浏览器标签页的标题。</li>
+                    <li><code>&lt;link rel="stylesheet"&gt;</code>：引入外部 CSS。</li>
+                    <li><code>&lt;style&gt;</code> / <code>&lt;script&gt;</code>：内嵌 CSS / JS。</li>
+                </ul>
+
+                <h2>二、body 内的常用标签</h2>
+                <p>这部分是真正显示在页面里的内容，按用途可以再分：</p>
+
+                <h3>1. 文本与排版</h3>
+                <ul>
+                    <li><code>&lt;h1&gt;</code> ~ <code>&lt;h6&gt;</code>：标题，h1 最重要，递减。</li>
+                    <li><code>&lt;p&gt;</code>：段落。</li>
+                    <li><code>&lt;span&gt;</code>：行内容器，常用于局部样式。</li>
+                </ul>
+
+                <h3>2. 链接与媒体</h3>
+                <ul>
+                    <li><code>&lt;a&gt;</code>：超链接，<code>href</code> 指定目标。</li>
+                    <li><code>&lt;img&gt;</code>：图片，<code>src</code> 和 <code>alt</code> 必填。</li>
+                    <li><code>&lt;figure&gt;</code>：媒体内容区块，常配合 <code>&lt;figcaption&gt;</code>。</li>
+                </ul>
+
+                <h3>3. 列表与表格</h3>
+                <ul>
+                    <li><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> / <code>&lt;li&gt;</code>：无序/有序列表。</li>
+                    <li><code>&lt;table&gt;</code> / <code>&lt;tr&gt;</code> / <code>&lt;th&gt;</code> / <code>&lt;td&gt;</code>：表格。</li>
+                </ul>
+
+                <h3>4. 表单</h3>
+                <p>表单是交互的关键，由 <code>&lt;form&gt;</code> 包裹，里面放各种控件：</p>
+                <pre><code>&lt;form action="#" method="post"&gt;
+    &lt;input type="text" name="user" placeholder="用户名"&gt;
+    &lt;input type="email" name="mail" placeholder="邮箱"&gt;
+    &lt;textarea name="msg"&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;提交&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h2>三、结构化语义标签</h2>
+                <p>语义化标签让结构对人和机器都更友好。比起满屏的 <code>&lt;div&gt;</code>，用这些标签写出来的网页可读性强很多：</p>
+
+                <blockquote>
+                    语义化标签的好处：① 利于 SEO；② 利于屏幕阅读器无障碍访问；③ 提高代码可读性。
+                </blockquote>
+
+                <table>
+                    <thead>
+                        <tr><th>标签</th><th>用途</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>&lt;header&gt;</code></td><td>页头或区块头部</td></tr>
+                        <tr><td><code>&lt;nav&gt;</code></td><td>导航区</td></tr>
+                        <tr><td><code>&lt;main&gt;</code></td><td>主体内容（每页一个）</td></tr>
+                        <tr><td><code>&lt;section&gt;</code></td><td>主题性内容分组</td></tr>
+                        <tr><td><code>&lt;article&gt;</code></td><td>独立可分发的内容（文章/帖子）</td></tr>
+                        <tr><td><code>&lt;aside&gt;</code></td><td>侧边栏、次要信息</td></tr>
+                        <tr><td><code>&lt;footer&gt;</code></td><td>页脚或区块底部</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>四、小结</h2>
+                <p>这次复习下来，最大的感受是：<strong>HTML 看似简单，但想写得"标准"不容易</strong>。光知道每个标签是干什么的还不够，还要知道什么时候该用、什么时候不该用。后面开始学 CSS 之后再来把这些结构美化一下，应该会顺畅不少。</p>
+
+            </article>
+
+            <!-- 文章底部 -->
+            <div class="article-footer">
+                <a href="archive.html" class="back-link">&larr; 返回文章列表</a>
+                <span class="tag-list-inline">
+                    标签：
+                    <a href="archive.html">HTML</a>
+                    <a href="archive.html">语义化</a>
+                    <a href="archive.html">学习笔记</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- 侧边栏：和主页共用一份内容 -->
+        <aside class="you">
+            <section class="mokuai">
+                <h3>关于我</h3>
+                <figure class="touxiang">
+                    <img src="https://picsum.photos/seed/avatar7/96/96" alt="我的头像">
+                </figure>
+                <p class="wo">大四重修 · 计算机应用专业</p>
+                <p>Web基础重修中，重新过一遍标签和样式，顺便记点东西。争取这次把它学扎实。</p>
+            </section>
+
+            <section class="mokuai">
+                <h3>本系列笔记</h3>
+                <ul class="biji">
+                    <li>HTML 常用标签整理（本篇）</li>
+                    <li><a href="#">CSS 选择器笔记</a></li>
+                    <li><a href="#">盒模型小结</a></li>
+                    <li><a href="#">Flex 布局小结</a></li>
+                    <li><a href="#">重修复习提纲</a></li>
+                </ul>
+            </section>
+
+            <section class="mokuai">
+                <h3>学习记录</h3>
+                <p>博客的三个练习阶段：</p>
+                <table class="jieduan">
+                    <tr>
+                        <th>阶段</th>
+                        <th>内容</th>
+                    </tr>
+                    <tr>
+                        <td>第一步</td>
+                        <td>HTML 结构</td>
+                    </tr>
+                    <tr>
+                        <td>第二步</td>
+                        <td>基础 CSS</td>
+                    </tr>
+                    <tr>
+                        <td>第三步</td>
+                        <td>Flex 布局</td>
+                    </tr>
+                </table>
+            </section>
+        </aside>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="dibu">
+        <p>&copy; 2026 个人博客 · 大四Web重修记录</p>
+    </footer>
+
+    <!-- 换肤的js，几个页面共用的 -->
+    <script src="js/theme.js"></script>
+</body>
+</html>

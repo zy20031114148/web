@@ -1,0 +1,142 @@
+/* 主页专用：文章卡片 + 留言板 */
+
+/* 文章卡片 */
+.wenzhang {
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    padding: 16px 20px 18px;
+    margin-bottom: 16px;
+    transition: box-shadow 0.2s;
+}
+
+.wenzhang:hover {
+    box-shadow: 0 4px 12px rgba(46, 110, 78, 0.08);
+}
+
+.wenzhangxinxi {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+/* 标签 */
+.biaoqian {
+    display: inline-block;
+    background-color: #e8f0ea;
+    color: #2e6e4e;
+    font-size: 12px;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.wenzhang h3 {
+    font-size: 17px;
+    margin: 0 0 6px;
+    color: #222;
+}
+
+.wenzhang h3 a {
+    color: inherit;
+}
+
+.wenzhang h3 a:hover {
+    color: #2e6e4e;
+}
+
+.wenzhang p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* 留言板 */
+.liuyanban {
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    padding: 16px 20px 20px;
+    margin-top: 24px;
+}
+
+.liuyanshuoming {
+    font-size: 13px;
+    color: #999;
+    margin: 0 0 14px;
+}
+
+
+/* 表单每一行 */
+.hang {
+    margin-bottom: 14px;
+}
+
+.hang label,
+.biaoqianwenzi {
+    display: block;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.hang input[type="text"],
+.hang input[type="email"],
+.hang textarea {
+    width: 100%;
+    font-size: 14px;
+    background-color: #fbfcfb;
+    color: #333;
+}
+
+.hang input[type="text"]:focus,
+.hang input[type="email"]:focus,
+.hang textarea:focus {
+    outline: none;
+    border-color: #2e6e4e;
+    background-color: #fff;
+}
+
+.hang textarea {
+    resize: vertical;
+}
+
+/* 单选 */
+.danxuan {
+    display: inline-block;
+    margin-right: 16px;
+    font-size: 13px;
+    color: #555;
+}
+
+.danxuan input {
+    margin-right: 4px;
+    accent-color: #2e6e4e;
+}
+
+/* 按钮组 */
+.anniu {
+    display: flex;
+    gap: 10px;
+}
+
+.zhuyaobtn {
+    background-color: #2e6e4e;
+    color: #fff;
+    border: 1px solid #2e6e4e;
+}
+
+.zhuyaobtn:hover {
+    background-color: #1c5238;
+}
+
+.cibtn {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #d8ddd8;
+}
+
+.cibtn:hover {
+    border-color: #2e6e4e;
+    color: #2e6e4e;
+    background-color: #fbfcfb;
+}

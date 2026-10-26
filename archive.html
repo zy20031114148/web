@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="全部文章 - 个人博客">
+    <meta name="keywords" content="博客,文章列表,学习笔记">
+    <meta name="author" content="chen">
+
+    <title>全部文章 - 个人博客</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media-query.css">
+</head>
+<body>
+
+    <!-- 顶部 -->
+    <header class="topbar">
+        <div class="neikuang">
+            <h1 class="zhanming"><a href="index.html">个人博客</a></h1>
+
+            <nav class="daohang">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="archive.html" class="dangqian">文章</a></li>
+                    <li><a href="index.html#guanyu">关于我</a></li>
+                    <li><a href="index.html#liuyanban">留言板</a></li>
+                </ul>
+            </nav>
+
+            <details class="mobile-menu">
+                <summary>菜单</summary>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archive.html">文章</a></li>
+                        <li><a href="index.html#guanyu">关于我</a></li>
+                        <li><a href="index.html#liuyanban">留言板</a></li>
+                    </ul>
+                </nav>
+            </details>
+
+            <div class="huanfu" id="huanfu">
+                <button type="button" class="huanfubtn" id="huanfubtn">更换皮肤</button>
+                <ul class="zhutiliebiao" id="zhutilist">
+                    <li><button type="button" data-zhuti="theme-red">红色系</button></li>
+                    <li><button type="button" data-zhuti="theme-blue">蓝色系</button></li>
+                    <li><button type="button" data-zhuti="theme-light">还原主题</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 面包屑 -->
+    <nav class="mianbaoxie neikuang">
+        <a href="index.html">博客首页</a>
+        <span class="fenge">/</span>
+        <span>全部文章</span>
+    </nav>
+
+    <main class="zhuti neikuang">
+
+        <div class="zuo">
+            <h2 class="kuaibiao">全部文章</h2>
+
+            <!-- 新的在上面 -->
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">学习</span>
+                    <time>2026-10-15</time>
+                </p>
+                <h3><a href="score.html">成绩统计（鼠标事件）</a></h3>
+                <p>这个页面把班里的分数整理了一下，选个及格线就能统计及格人数和及格率，顺便练了 click 和 mouseenter 两个鼠标事件。</p>
+            </article>
+
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">学习</span>
+                    <time>2026-10-12</time>
+                </p>
+                <h3><a href="basic.html">JS基础语法练习</a></h3>
+                <p>变量、数据类型、循环、函数、模板字符串，还有几个ES6的解构和扩展运算符，都写成小例子打印在控制台里了。</p>
+            </article>
+
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">随想</span>
+                    <time>2026-10-06</time>
+                </p>
+                <h3>折腾博客模板</h3>
+                <p>把页面布局从最开始的上下堆叠改成了左右分栏，顺便用 flex 重写了导航条和留言板。中间样式覆盖来覆盖去，改到快十二点才好。</p>
+            </article>
+
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">日常</span>
+                    <time>2026-09-25</time>
+                </p>
+                <h3>重修考试临近</h3>
+                <p>这几周一直在复习，博客更得慢了。Web重修加上另一门课，复习时间被切得很碎。先把Web前几章的笔记翻出来重新过了一遍。</p>
+            </article>
+
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">学习</span>
+                    <time>2026-09-14</time>
+                </p>
+                <h3>初识CSS</h3>
+                <p>这周开始学CSS。选择器先记了类选择器、id选择器、后代选择器和伪类 :hover，属性方面试了颜色、字体、背景和边框。</p>
+            </article>
+
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">学习</span>
+                    <time>2026-09-07</time>
+                </p>
+                <h3><a href="article.html">用HTML搭建文章结构</a></h3>
+                <p>这周把常用标签过了一遍：h1~h6 组织标题层级，p 写段落，a 做链接，ul/li 写列表，还有 header、nav、main、footer 这些语义化标签。</p>
+            </article>
+
+            <article class="wenzhang">
+                <p class="wenzhangxinxi">
+                    <span class="biaoqian">学习</span>
+                    <time>2026-09-01</time>
+                </p>
+                <h3>我的第一篇博客</h3>
+                <p>大四还要回来重修Web，想想都觉得丢人。既然躲不掉，干脆认真一点。开个博客把每次课学的东西记下来，免得再混过去一遍。</p>
+            </article>
+        </div>
+
+        <!-- 侧边栏 -->
+        <aside class="you">
+            <section class="mokuai">
+                <h3>文章统计</h3>
+                <table class="tongji">
+                    <tr><td>文章总数</td><td>7 篇</td></tr>
+                    <tr><td>学习</td><td>5 篇</td></tr>
+                    <tr><td>日常</td><td>1 篇</td></tr>
+                    <tr><td>随想</td><td>1 篇</td></tr>
+                </table>
+            </section>
+
+            <section class="mokuai">
+                <h3>练习页面</h3>
+                <ul class="biji">
+                    <li><a href="basic.html">JS基础语法练习</a></li>
+                    <li><a href="score.html">成绩统计</a></li>
+                    <li><a href="register.html">注册表单校验</a></li>
+                </ul>
+            </section>
+
+            <section class="mokuai">
+                <h3>关于我</h3>
+                <figure class="touxiang">
+                    <img src="https://picsum.photos/seed/avatar7/96/96" alt="我的头像">
+                </figure>
+                <p class="wo">大四重修 · 计算机应用专业</p>
+                <p>Web基础重修中，重新过一遍标签和样式，顺便记点东西。争取这次把它学扎实。</p>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="dibu">
+        <p>&copy; 2026 个人博客 · 大四Web重修记录</p>
+    </footer>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+/* 公共组件：两个页面都会用到的样式都放这 */
+
+/* 顶部 */
+.topbar {
+    background-color: #fff;
+    border-bottom: 1px solid #e4e8e4;
+    padding: 14px 0;
+}
+
+.topbar .neikuang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 站名用的h1，base里h1自带margin，这里必须清掉不然顶栏会被撑高 */
+.zhanming {
+    font-size: 20px;
+    color: #1c5238;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* ---- 横向导航 ---- */
+.daohang ul {
+    display: flex;
+    gap: 4px;
+}
+
+.daohang a {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #555;
+    border-radius: 4px;
+}
+
+.daohang a:hover {
+    background-color: #e8f0ea;
+    color: #1c5238;
+    text-decoration: none;
+}
+
+.daohang a.dangqian {
+    background-color: #2e6e4e;
+    color: #fff;
+}
+
+/* 折叠菜单，默认隐藏，窄屏在media-query里打开 */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    background-color: #2e6e4e;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    user-select: none;
+}
+
+/* chrome和safari光写list-style:none去不掉小三角，得加这个 */
+.mobile-menu > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* 横幅 */
+.hengfu {
+    padding: 46px 0 10px;
+}
+
+.xiaobiaoti {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #2e6e4e;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dabiaoti {
+    font-size: 32px;
+    color: #222;
+    line-height: 1.4;
+    margin: 8px 0 0;
+}
+
+/* 区块标题，同上h2的margin-top也要清 */
+.kuaibiao {
+    font-size: 18px;
+    color: #222;
+    padding-bottom: 8px;
+    margin: 0 0 14px;
+    border-bottom: 1px solid #e4e8e4;
+}
+
+/* 侧边栏小卡片 */
+.mokuai {
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+}
+
+.mokuai h3 {
+    font-size: 15px;
+    color: #1c5238;
+    padding-bottom: 6px;
+    margin: 0 0 10px;
+    border-bottom: 1px dashed #d8ddd8;
+}
+
+.mokuai p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* 头像 */
+.touxiang {
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.touxiang img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e8f0ea;
+}
+
+.wo {
+    color: #2e6e4e;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 统计表格 */
+.tongji {
+    width: 100%;
+    font-size: 13px;
+}
+
+.tongji td {
+    padding: 6px 4px;
+    border-bottom: 1px dashed #eee;
+}
+
+.tongji td:first-child {
+    color: #999;
+    width: 76px;
+}
+
+.tongji tr:last-child td {
+    border-bottom: none;
+}
+
+/* 学习记录表格，两列：阶段/内容 */
+.jieduan {
+    width: 100%;
+    font-size: 13px;
+}
+
+.jieduan th,
+.jieduan td {
+    padding: 6px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.jieduan th {
+    background-color: #eef3ee;
+    color: #555;
+    font-weight: bold;
+}
+
+.jieduan td:first-child {
+    color: #1c5238;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.jieduan tr:last-child td {
+    border-bottom: none;
+}
+
+/* 笔记链接 */
+.biji {
+    font-size: 13px;
+}
+
+.biji li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.biji li:last-child {
+    border-bottom: none;
+}
+
+.biji a {
+    color: #555;
+}
+
+.biji a:hover {
+    color: #2e6e4e;
+}
+
+/* 面包屑：博客首页 / 全部文章 / 某篇文章 */
+.mianbaoxie {
+    padding-top: 18px;
+    font-size: 13px;
+    color: #666;
+}
+
+.mianbaoxie a {
+    color: #2e6e4e;
+}
+
+.mianbaoxie .fenge {
+    margin: 0 6px;
+    color: #bbb;
+}
+
+/* 页脚 */
+.dibu {
+    background-color: #fff;
+    border-top: 1px solid #e4e8e4;
+    text-align: center;
+    padding: 14px 20px;
+    margin-top: auto;       /* 配合 body 的 flex 让页脚贴底 */
+}
+
+.dibu p {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}

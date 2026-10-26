@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="成绩统计（鼠标事件） - 个人博客">
+    <meta name="keywords" content="JavaScript,鼠标事件,click,mouseenter,成绩统计">
+    <meta name="author" content="chen">
+
+    <title>成绩统计（鼠标事件） - 个人博客</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/media-query.css">
+</head>
+<body>
+
+    <!-- 顶部 -->
+    <header class="topbar">
+        <div class="neikuang">
+            <h1 class="zhanming"><a href="index.html">个人博客</a></h1>
+
+            <nav class="daohang">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="archive.html" class="dangqian">文章</a></li>
+                    <li><a href="index.html#guanyu">关于我</a></li>
+                    <li><a href="index.html#liuyanban">留言板</a></li>
+                </ul>
+            </nav>
+
+            <details class="mobile-menu">
+                <summary>菜单</summary>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="archive.html">文章</a></li>
+                        <li><a href="index.html#guanyu">关于我</a></li>
+                        <li><a href="index.html#liuyanban">留言板</a></li>
+                    </ul>
+                </nav>
+            </details>
+
+            <div class="huanfu" id="huanfu">
+                <button type="button" class="huanfubtn" id="huanfubtn">更换皮肤</button>
+                <ul class="zhutiliebiao" id="zhutilist">
+                    <li><button type="button" data-zhuti="theme-red">红色系</button></li>
+                    <li><button type="button" data-zhuti="theme-blue">蓝色系</button></li>
+                    <li><button type="button" data-zhuti="theme-light">还原主题</button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- 面包屑 -->
+    <nav class="mianbaoxie neikuang">
+        <a href="index.html">博客首页</a>
+        <span class="fenge">/</span>
+        <a href="archive.html">全部文章</a>
+        <span class="fenge">/</span>
+        <span>成绩统计（鼠标事件）</span>
+    </nav>
+
+    <main class="zhuti neikuang">
+
+        <div class="zuo">
+
+            <!-- 文章头 -->
+            <header class="article-header">
+                <h1>成绩统计（鼠标事件）</h1>
+                <p class="article-meta">
+                    <span>分类：<a href="archive.html">学习</a></span>
+                    <span>发布：<time>2026-10-15</time></span>
+                    <span>阅读时长：5 分钟</span>
+                </p>
+            </header>
+
+            <!-- 文章正文 -->
+            <article class="article-content">
+
+                <p>班里这次小测的分数一直躺在表格里，干脆写个小工具整理一下。选一个及格线，点按钮就能算出及格人数、及格率，还能把及格的同学名字挑出来。</p>
+
+                <h2>一、用到的鼠标事件</h2>
+                <ul>
+                    <li><code>click</code>：点“统计成绩”按钮时统计一次；</li>
+                    <li><code>mouseenter</code>：鼠标移上去也统计，省得点；</li>
+                    <li><code>mouseleave</code>：移出时做收尾，换肤菜单就是用这个把二级菜单收起来的。</li>
+                </ul>
+                <pre><code>tongjiBtn.onclick = tongji;
+tongjiBtn.addEventListener('mouseenter', tongji);</code></pre>
+
+                <h2>二、分数存在哪</h2>
+                <p>名单直接写在页面里，每个 <code>li</code> 用 <code>data-fenshu</code> 属性存分数，js 用 <code>querySelectorAll</code> 把这些元素取出来再读属性：</p>
+                <pre><code>&lt;li data-fenshu="72"&gt;张伟 72&lt;/li&gt;
+
+var xuesheng = mingdan.querySelectorAll('li');
+var fenshu = parseInt(xuesheng[i].getAttribute('data-fenshu'));</code></pre>
+
+                <h2>三、动手试试</h2>
+                <p>选一个及格线，然后点“统计成绩”，鼠标移到按钮上也会算一次。</p>
+
+                <!-- 工具区，不是文章的一部分，单独包一层 -->
+                <div class="gongju">
+                    <ul class="mingdan" id="mingdan">
+                        <li data-fenshu="72">张伟 72</li>
+                        <li data-fenshu="45">李娜 45</li>
+                        <li data-fenshu="88">王强 88</li>
+                        <li data-fenshu="91">赵敏 91</li>
+                        <li data-fenshu="60">刘洋 60</li>
+                        <li data-fenshu="55">陈静 55</li>
+                        <li data-fenshu="78">周杰 78</li>
+                        <li data-fenshu="100">吴芳 100</li>
+                    </ul>
+
+                    <div class="xuanzexing">
+                        <label for="jigexian">及格线</label>
+                        <select id="jigexian">
+                            <option value="60">60分</option>
+                            <option value="70">70分</option>
+                            <option value="80">80分</option>
+                            <option value="90">90分</option>
+                        </select>
+                        <button type="button" class="zhuyaobtn" id="tongjibtn">统计成绩</button>
+                    </div>
+
+                    <div class="jieguo" id="jieguo">
+                        <p>选个及格线再点按钮。</p>
+                    </div>
+                </div>
+
+                <h2>四、统计逻辑</h2>
+                <p>循环遍历每个学生，累加总分、找最高分和最低分，分数大于等于及格线的就记进及格名单：</p>
+                <pre><code>for (var i = 0; i &lt; zongshu; i++) {
+    var fenshu = parseInt(xuesheng[i].getAttribute('data-fenshu'));
+    zongfen += fenshu;
+
+    if (fenshu >= xian) {
+        jigeRenshu++;
+        jigeMingdan.push(xuesheng[i].textContent);
+    }
+}</code></pre>
+
+                <blockquote>
+                    及格的同学名字会自动变绿，一眼就能看出来。
+                </blockquote>
+
+            </article>
+
+            <!-- 文章底部 -->
+            <div class="article-footer">
+                <a href="archive.html" class="back-link">&larr; 返回文章列表</a>
+                <span class="tag-list-inline">
+                    标签：
+                    <a href="archive.html">JavaScript</a>
+                    <a href="archive.html">鼠标事件</a>
+                    <a href="archive.html">学习笔记</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- 侧边栏 -->
+        <aside class="you">
+            <section class="mokuai">
+                <h3>练习页面</h3>
+                <ul class="biji">
+                    <li><a href="basic.html">JS基础语法练习</a></li>
+                    <li><a href="score.html">成绩统计（本篇）</a></li>
+                    <li><a href="register.html">注册表单校验</a></li>
+                </ul>
+            </section>
+
+            <section class="mokuai">
+                <h3>关于我</h3>
+                <figure class="touxiang">
+                    <img src="https://picsum.photos/seed/avatar7/96/96" alt="我的头像">
+                </figure>
+                <p class="wo">大四重修 · 计算机应用专业</p>
+                <p>Web基础重修中，重新过一遍标签和样式，顺便记点东西。争取这次把它学扎实。</p>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="dibu">
+        <p>&copy; 2026 个人博客 · 大四Web重修记录</p>
+    </footer>
+
+    <script src="js/score.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* form.css 注册页和成绩页要用的样式 */
+
+/* 页面里的大卡片 */
+.zhuce,
+.chengjiqu {
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+    padding: 20px 24px 24px;
+}
+
+/* 表单每一行 */
+.formhang {
+    margin-bottom: 14px;
+}
+
+.formhang label {
+    display: block;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.formhang input,
+.formhang select {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    background-color: #fbfcfb;
+    border: 1px solid #d8ddd8;
+    border-radius: 4px;
+}
+
+.formhang input:focus,
+.formhang select:focus {
+    outline: none;
+    border-color: #2e6e4e;
+    background-color: #fff;
+}
+
+/* 校验通过绿框，不通过红框 */
+.formhang input.dui {
+    border-color: #2e6e4e;
+    background-color: #fff;
+}
+
+.formhang input.cuo {
+    border-color: #c0392b;
+    background-color: #fff5f4;
+}
+
+/* 输入框下面的提示文字 */
+.tishi {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+    min-height: 18px;
+}
+
+.tishi.cuo {
+    color: #c0392b;
+}
+
+.tishi.dui {
+    color: #2e6e4e;
+}
+
+/* 按钮 */
+.anniu {
+    display: flex;
+    gap: 10px;
+}
+
+.zhuyaobtn {
+    padding: 8px 18px;
+    font: inherit;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2e6e4e;
+    border: 1px solid #2e6e4e;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.zhuyaobtn:hover {
+    background-color: #1c5238;
+}
+
+.cibtn {
+    padding: 8px 18px;
+    font: inherit;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #d8ddd8;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cibtn:hover {
+    border-color: #2e6e4e;
+    color: #2e6e4e;
+}
+
+/* 提交后整条结果的提示 */
+.jieguotishi {
+    margin-top: 16px;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.jieguotishi.dui {
+    color: #1c5238;
+    background-color: #e8f0ea;
+}
+
+.jieguotishi.cuo {
+    color: #a93226;
+    background-color: #fdf0ee;
+}
+
+/* 文章正文里的工具区（成绩统计嵌在文章里用） */
+.gongju {
+    margin: 1.2em 0;
+    padding: 16px 18px;
+    background-color: #f8faf8;
+    border: 1px solid #e4e8e4;
+    border-radius: 6px;
+}
+
+/* ===== 成绩统计页 ===== */
+
+/* 选择及格线那一行 */
+.xuanzexing {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.xuanzexing select {
+    width: 90px;
+    padding: 6px 8px;
+    font-size: 14px;
+    border: 1px solid #d8ddd8;
+    border-radius: 4px;
+}
+
+/* 学生名单，每个名字后面跟着分数 */
+.mingdan {
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #666;
+}
+
+.mingdan li {
+    display: inline-block;
+    margin: 0 12px 6px 0;
+}
+
+.mingdan li.jige {
+    color: #2e6e4e;
+    font-weight: bold;
+}
+
+/* 统计结果 */
+.jieguo {
+    padding-top: 14px;
+    border-top: 1px dashed #d8ddd8;
+    font-size: 14px;
+    color: #555;
+}
+
+.jieguo p {
+    margin-bottom: 6px;
+}
+
+.jieguo strong {
+    color: #1c5238;
+    font-size: 16px;
+}
+
+/* ===== 独立注册页 =====
+   注册页不属于博客的内容，所以没套博客的页头侧栏页脚，
+   就是一个居中的表单 */
+
+body.zhuce-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 16px;
+}
+
+.zhuce-wrap {
+    width: 100%;
+    max-width: 430px;
+}
+
+.zhuce-brand {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1c5238;
+    margin-bottom: 6px;
+}
+
+.zhuce-brand a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.zhuce-tip {
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 18px;
+}
+
+/* 右上角的换肤按钮，固定在角落里 */
+.zhuce-huanfu {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    max-width: 92vw;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+    .zhuce-huanfu {
+        top: 10px;
+        right: 10px;
+    }
+}
