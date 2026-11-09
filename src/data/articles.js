@@ -1,8 +1,8 @@
-/* data.js 博客文章数据
-   数组里每个对象就是一篇文章，renderData() 只认这个数组。
-   link 为空说明这篇没有详情页，标题就不加链接。 */
+/* 文章数据，从实验5 的 data.js 搬过来，改成 export 给组件用 */
 
-const wenzhangArr = [
+export const categories = ['学习', '日常', '随想'];
+
+export const articles = [
     {
         id: 1,
         title: '成绩统计（鼠标事件）',
@@ -40,7 +40,7 @@ const wenzhangArr = [
         title: '初识CSS',
         category: '学习',
         date: '2026-09-14',
-        summary: '这周开始学CSS。选择器先记了类选择器、id选择器、后代选择器和伪类 <code>:hover</code>。属性方面试了颜色、字体、背景和边框。改完代码刷新一下就能看到效果，还挺有成就感的。',
+        summary: '这周开始学CSS。选择器先记了类选择器、id选择器、后代选择器和伪类 :hover。属性方面试了颜色、字体、背景和边框。改完代码刷新一下就能看到效果，还挺有成就感的。',
         link: ''
     },
     {
@@ -48,7 +48,7 @@ const wenzhangArr = [
         title: '用HTML搭建文章结构',
         category: '学习',
         date: '2026-09-07',
-        summary: '这周把常用标签过了一遍：用 <code>h1</code>~<code>h6</code> 组织标题层级，用 <code>p</code> 写段落，用 <code>a</code> 做链接跳转，用 <code>ul</code>/<code>li</code> 写列表。另外还有语义化标签 <code>header</code>、<code>nav</code>、<code>main</code>、<code>footer</code>，比起满屏的 div，语义化标签读起来清楚多了。',
+        summary: '这周把常用标签过了一遍：用 h1~h6 组织标题层级，用 p 写段落，用 a 做链接跳转，用 ul/li 写列表。另外还有语义化标签 header、nav、main、footer，比起满屏的 div，语义化标签读起来清楚多了。',
         link: 'article.html'
     },
     {

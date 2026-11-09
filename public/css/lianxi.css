@@ -1,0 +1,237 @@
+/* lianxi.css 指令练习页和 TodoList 页共用的样式 */
+
+.lianxi-wrap {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 0 40px;
+}
+
+.lianxi-title {
+    margin-bottom: 4px;
+    font-size: 22px;
+    color: #1c5238;
+}
+
+.lianxi-tip {
+    margin-bottom: 22px;
+    font-size: 13px;
+    color: #999;
+}
+
+.lianxi-tip a {
+    color: #2e6e4e;
+}
+
+.lianxi-block {
+    margin-bottom: 16px;
+    padding: 16px 20px 18px;
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+}
+
+.lianxi-block h2 {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: #2e6e4e;
+    border-bottom: 1px dashed #d8ddd8;
+}
+
+.lianxi-block p,
+.lianxi-block li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #444;
+}
+
+.lianxi-block ul {
+    margin-bottom: 8px;
+}
+
+.lianxi-block button {
+    margin: 2px 8px 2px 0;
+}
+
+/* 结果展示条 */
+.lianxi-out {
+    margin-top: 10px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #2e6e4e;
+    background-color: #f4f8f5;
+    border-left: 3px solid #2e6e4e;
+}
+
+/* v-bind 用的几个类 */
+.red {
+    color: #b03a2e;
+}
+
+.class1 {
+    background-color: #eef6f1;
+}
+
+.class2 {
+    padding: 2px 8px;
+}
+
+.active {
+    background-color: #dff0e5;
+    border-left: 3px solid #2e6e4e;
+    padding-left: 8px;
+}
+
+/* ===== TodoList ===== */
+
+.todo-box {
+    padding: 18px 22px 22px;
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+}
+
+.todo-box h2 {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    font-size: 15px;
+    color: #2e6e4e;
+    border-bottom: 1px dashed #d8ddd8;
+}
+
+.todo-input {
+    width: 100%;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px dashed #e9ede9;
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+.todo-list input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    accent-color: #2e6e4e;
+}
+
+.todo-text {
+    flex: 1;
+    color: #333;
+}
+
+/* 已完成：文字加横线变灰 */
+.todo-list li.done .todo-text {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.todo-edit {
+    flex: 1;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.todo-del,
+.todo-edit-btn {
+    padding: 3px 10px;
+    font-size: 12px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #d8ddd8;
+}
+
+.todo-del:hover,
+.todo-edit-btn:hover {
+    color: #fff;
+    background-color: #2e6e4e;
+    border-color: #2e6e4e;
+}
+
+/* 右下角的统计标签 */
+.todo-count {
+    margin-top: 14px;
+    text-align: right;
+    font-size: 13px;
+    color: #999;
+}
+
+.todo-count strong {
+    color: #2e6e4e;
+}
+
+.todo-empty {
+    padding: 12px 0;
+    font-size: 13px;
+    color: #999;
+}
+
+/* ===== Vue Router 示例 ===== */
+
+.router-box {
+    padding: 16px 20px 20px;
+    background-color: #fff;
+    border: 1px solid #e4e8e4;
+    border-radius: 8px;
+}
+
+.router-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #d8ddd8;
+}
+
+.router-nav a {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #555;
+    border: 1px solid #d8ddd8;
+    border-radius: 4px;
+}
+
+.router-nav a:hover {
+    color: #2e6e4e;
+    border-color: #2e6e4e;
+    text-decoration: none;
+}
+
+/* 当前路由自动带上这个类 */
+.router-nav a.router-link-active {
+    color: #fff;
+    background-color: #2e6e4e;
+    border-color: #2e6e4e;
+}
+
+.router-page {
+    min-height: 160px;
+    font-size: 14px;
+    color: #444;
+}
+
+.router-page h2 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #1c5238;
+}
+
+.router-page p {
+    margin-bottom: 8px;
+}
+
+.router-page ul li {
+    padding: 7px 0;
+    border-bottom: 1px dashed #e9ede9;
+}

@@ -38,6 +38,13 @@
     color: #999;
 }
 
+/* 搜索反馈：watch 里写的那句提示 */
+.sousuotishi {
+    margin: -6px 0 12px;
+    font-size: 12px;
+    color: #999;
+}
+
 /* ---- 空状态：没搜到文章、还没留言都用这个 ---- */
 .kongtishi {
     display: block;
@@ -130,6 +137,7 @@ body.night .sousuo select {
 }
 
 body.night .wenzhangshu,
+body.night .sousuotishi,
 body.night .kongtishi {
     color: #9aa2a6;
 }
